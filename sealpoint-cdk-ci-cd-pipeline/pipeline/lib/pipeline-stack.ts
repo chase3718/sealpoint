@@ -9,7 +9,7 @@ import { Construct } from 'constructs';
 interface PipelineStackProps extends StackProps {
 	envName: string;
 	infrastructureRepoName: string;
-	infrasturctureBranchName: string;
+	infrastructureBranchName: string;
 	repositoryOwner: string;
 }
 
@@ -17,7 +17,7 @@ export class PipelineStack extends Stack {
 	constructor(scope: Construct, id: string, props: PipelineStackProps) {
 		super(scope, id, props);
 		console.log(props);
-		const { envName, infrastructureRepoName, infrasturctureBranchName, repositoryOwner } = props;
+		const { envName, infrastructureRepoName, infrastructureBranchName, repositoryOwner } = props;
 
 		const gitHubtoken = SecretValue.secretsManager('github-token');
 
@@ -85,7 +85,7 @@ export class PipelineStack extends Stack {
 					owner: repositoryOwner,
 					repo: infrastructureRepoName,
 					actionName: 'InfrastructureSource',
-					branch: infrasturctureBranchName + '/sealpoint-cdk-ci-cd-pipeline',
+					branch: infrastructureBranchName + '/sealpoint-cdk-ci-cd-pipeline',
 					output: infrastructureSourceOutput,
 					oauthToken: gitHubtoken,
 				}),
