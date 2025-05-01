@@ -85,7 +85,7 @@ export class PipelineStack extends Stack {
 					owner: repositoryOwner,
 					repo: infrastructureRepoName,
 					actionName: 'InfrastructureSource',
-					branch: infrasturctureBranchName,
+					branch: infrasturctureBranchName + '/sealpoint-cdk-ci-cd-pipeline',
 					output: infrastructureSourceOutput,
 					oauthToken: gitHubtoken,
 				}),

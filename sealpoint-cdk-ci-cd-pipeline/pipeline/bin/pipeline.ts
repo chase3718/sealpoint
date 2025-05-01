@@ -17,9 +17,7 @@ env = {
 	...env,
 	infrastructureRepoName,
 	repositoryOwner,
-	description: `Stack for the ${deployEnvironment} CI pipeline deployed using 
-  the CDK. If you need to delete this stack, delete the ${deployEnvironment} 
-  CDK infrastructure stack first.`,
+	description: `Stack for the ${deployEnvironment} CI pipeline deployed using the CDK. If you need to delete this stack, delete the ${deployEnvironment} CDK infrastructure stack first.`,
 };
 
 new PipelineStack(app, `${deployEnvironment}-CI-Pipeline-Stack`, env);
