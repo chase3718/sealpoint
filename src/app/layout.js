@@ -1,12 +1,11 @@
 import localFont from 'next/font/local';
 import { Creepster, Rubik_Distressed } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
-
 import './globals.css';
 import styles from './layout.module.scss';
-
 import Footer from './components/Footer/footer';
 import Navbar from './components/Navbar/navbar';
+import firebaseApp from '../firebaseConfig'; // Import Firebase
 
 export const metadata = {
 	title: 'Seal Point',
