@@ -63,7 +63,7 @@ export class PipelineStack extends Stack {
 						'runtime-versions': {
 							nodejs: '20.x',
 						},
-						commands: ['npm install -g aws-cdk', 'cd infrastructure', 'npm install'],
+						commands: ['npm install -g aws-cdk', 'cd sealpoint-cdk-ci-cd-pipeline/infrastructure', 'npm install'],
 					},
 					build: {
 						commands: [`cdk deploy --context env=${envName}`],
@@ -85,7 +85,7 @@ export class PipelineStack extends Stack {
 					owner: repositoryOwner,
 					repo: infrastructureRepoName,
 					actionName: 'InfrastructureSource',
-					branch: infrastructureBranchName + '/sealpoint-cdk-ci-cd-pipeline',
+					branch: infrastructureBranchName,
 					output: infrastructureSourceOutput,
 					oauthToken: gitHubtoken,
 				}),
