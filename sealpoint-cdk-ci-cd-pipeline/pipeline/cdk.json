@@ -84,7 +84,7 @@
 		"@aws-cdk/core:aspectPrioritiesMutating": true,
 		"@aws-cdk/aws-dynamodb:retainTableReplica": true,
 		"@aws-cdk/aws-stepfunctions:useDistributedMapResultWriterV2": true,
-		"infrastructureRepoName": "sealpoint-cdk-ci-cd-pipeline",
+		"infrastructureRepoName": "sealpoint/sealpoint-cdk-ci-cd-pipeline",
 		"repositoryOwner": "chase3718",
 		"dev": {
 			"envName": "dev",
