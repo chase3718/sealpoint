@@ -5,7 +5,6 @@ import './globals.css';
 import styles from './layout.module.scss';
 import Footer from './components/Footer/footer';
 import Navbar from './components/Navbar/navbar';
-import firebaseApp from './firebase';
 
 export const metadata = {
 	title: 'Seal Point',
