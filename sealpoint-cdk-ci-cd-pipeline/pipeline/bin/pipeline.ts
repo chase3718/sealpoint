@@ -10,12 +10,12 @@ if (!deployEnvironment || !environments.includes(deployEnvironment))
 	throw new Error('Please supply the env context variable: cdk deploy --context env=dev/prod');
 
 let env = app.node.tryGetContext(deployEnvironment);
-const infrastructureRepoName = app.node.tryGetContext('infrastructureRepoName');
+const repositoryName = app.node.tryGetContext('repositoryName');
 const repositoryOwner = app.node.tryGetContext('repositoryOwner');
 
 env = {
 	...env,
-	infrastructureRepoName,
+	repositoryName,
 	repositoryOwner,
 	description: `Stack for the ${deployEnvironment} CI pipeline deployed using the CDK. If you need to delete this stack, delete the ${deployEnvironment} CDK infrastructure stack first.`,
 };
