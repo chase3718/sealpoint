@@ -87,13 +87,16 @@
 		"@aws-cdk/aws-stepfunctions:useDistributedMapResultWriterV2": true,
 		"repositoryName": "sealpoint",
 		"repositoryOwner": "chase3718",
+		"domain": "sealpointband.com",
 		"dev": {
 			"envName": "dev",
-			"infrastructureBranchName": "dev"
+			"branch": "dev",
+			"subdomain": "dev."
 		},
 		"prod": {
 			"envName": "prod",
-			"infrastructureBranchName": "main"
+			"branch": "main",
+			"subdomain": ""
 		}
 	}
 }

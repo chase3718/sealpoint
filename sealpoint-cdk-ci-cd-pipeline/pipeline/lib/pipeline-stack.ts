@@ -9,7 +9,7 @@ import { Construct } from 'constructs';
 interface PipelineStackProps extends StackProps {
 	envName: string;
 	repositoryName: string;
-	infrastructureBranchName: string;
+	branch: string;
 	repositoryOwner: string;
 }
 
@@ -17,7 +17,7 @@ export class PipelineStack extends Stack {
 	constructor(scope: Construct, id: string, props: PipelineStackProps) {
 		super(scope, id, props);
 		console.log(props);
-		const { envName, repositoryName, infrastructureBranchName, repositoryOwner } = props;
+		const { envName, repositoryName, branch, repositoryOwner } = props;
 
 		const gitHubtoken = SecretValue.secretsManager('github-token');
 
@@ -85,7 +85,7 @@ export class PipelineStack extends Stack {
 					owner: repositoryOwner,
 					repo: repositoryName,
 					actionName: 'InfrastructureSource',
-					branch: infrastructureBranchName,
+					branch: branch,
 					output: infrastructureSourceOutput,
 					oauthToken: gitHubtoken,
 				}),
