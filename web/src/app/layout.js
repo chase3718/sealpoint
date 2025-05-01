@@ -29,6 +29,7 @@ const rubik_dis = Rubik_Distressed({
 	weight: '400',
 	variable: '--font-rubik-distressed',
 	subsets: ['latin'],
+	preload: false,
 });
 
 export default function RootLayout({ children }) {
